@@ -1,0 +1,32 @@
+window:
+    class:
+        instance: Alacritty
+        general: Alacritty
+
+scrolling:
+    history: 10000
+    multiplier: 3
+
+background_opacity: 1
+
+font:
+    normal:
+        family: FiraCode
+        style: Medium
+    bold:
+        family: FiraCode
+        style: Bold
+    italic:
+        family: FiraCode
+        style: Retina
+    bold_italic:
+        family: FiraCode
+        style: Light
+    size: 10
+draw_bold_text_with_bright_colors: true
+
+
+
+
+
+
