@@ -56,7 +56,7 @@ bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show
-bindsym $mod+f exec --no-startup-id rofi -show filebrowser
+bindsym $mod+F5 exec --no-startup-id i3-dmenu-desktop
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -188,37 +188,61 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 
 #bar
+set_from_resource $fg i3wm.color7
+set_from_resource $bg i3wm.color2 
 
-exec_always ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 
 
-#wallpaper
-exec_always feh --bg-fill /home/yatharth/Pictures/Wallpapers/wall10.png
+
+
 
 #make title bar disappear
-default_border pixel 0
-default_floating_border pixel 0
+default_border pixel 1
+default_floating_border pixel 1
 
 
-#Picom attachment
-exec_always --no-startup-id "picom --config /home/yatharth/.config/picom/picom.conf"
+
 
 
 
 # Configure 5px of space between windows and to the screen edges.
-gaps inner 5px
+gaps inner 7px
 
 # Configure an additional 5px of extra space to the screen edges,
 # for a total gap of 10px to the screen edges, and 5px between windows.
 gaps outer 7px
 
 
-# Only enable outer gaps when there is exactly one window or split container on the workspace.
-smart_gaps inverse_outer
+
 
 
 #auto_starters
 bindsym $mod+Shift+b exec blueman-manager
+bindsym $mod+x exec --no-startup-id ~/Scripts/clip.sh add
+bindsym $mod+c exec --no-startup-id ~/Scripts/clip.sh sel
+bindsym $mod+F4 exec --no-startup-id ~/Scripts/power.sh
+bindsym $mod+F1 exec --no-startup-id ~/Scripts/notes.sh
+bindsym $mod+f exec --no-startup-id ~/Scripts/fzf.sh
+bindsym $mod+F2 exec --no-startup-id ~/Scripts/wall.sh
+bindsym $mod+F12 exec --no-startup-id ~/Scripts/con_menu.sh
+
+#wallpaper
+exec_always --no-startup-id wal -R
+#screenshot
+bindsym Print exec --no-startup-id flameshot gui --path ~/Pictures/Screenshots --accept-on-select
+
+#Picom attachment
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
 
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg

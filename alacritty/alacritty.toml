@@ -29,8 +29,8 @@ general = "Alacritty"
 instance = "Alacritty"
 
 [window.padding]
-x = 10
-y = 10
+x = 15
+y = 15
 
 [colors.primary]
 foreground = "#99d1ce"

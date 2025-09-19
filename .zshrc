@@ -1,7 +1,25 @@
-eval "$(starship init zsh)"
-alias config-i3="xed ~/.config/i3/config &"
-alias config-polybar="xed ~/.config/polybar/config.ini &"
-alias config-picom="xed ~/.config/picom/picom.conf &"
-alias config-rofi="xed ~/.config/rofi/config.rasi &"
-alias config-alacritty="xed ~/.config/alacritty/alacritty.toml &"
-alias cs-game="wine ~/.wine/drive_c/Counter-Strike\ Original/Counter-Strike.exe"
+PROMPT='[%n@%m %~]$ '
+alias share='~/Scripts/share.sh'
+alias yt-play="~/Scripts/play.sh"
+alias trinity="ssh trinity"
+alias v="nvim"
+alias c="clear"
+alias uu="sudo pacman -Syu"
+alias ut="sudo pacman -Sy"
+alias i="sudo pacman -S"
+alias rs="sudo pacman -Rs"
+alias ff="fastfetch"
+alias ss="sudo pacman -Ss"
+alias ls -l="eza --icons -l"
+alias ls -al="eza --icons -al"
+alias ls="eza --icons"
+alias mu="mpv --no-video"
+(cat ~/.cache/wal/sequences &)
+cat ~/.cache/wal/sequences
+source ~/.cache/wal/colors-tty.sh
+
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY
