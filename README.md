@@ -10,3 +10,7 @@
 
 ![Screenshot](setup/3.png)
 
+![Screenshot](setup/4.png)
+
+![Screenshot](setup/5.png)
+
